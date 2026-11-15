@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "author": "Эрбол Жанышов",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -105, "left": -10.2, "attrs": {} },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot1",
+      "top": 120.2,
+      "left": 200.6,
+      "attrs": { "travelLength": "30" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -272.4,
+      "left": 90.2,
+      "attrs": { "color": "orange" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -272.4,
+      "left": 147.8,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -272.4,
+      "left": 32.6,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -177.6,
+      "left": 28.25,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -177.6,
+      "left": 85.85,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -177.6,
+      "left": 143.45,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -276,
+      "left": 241.8,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "pot1:VCC", "uno:5V", "red", [ "h0" ] ],
+    [ "led3:A", "r1:1", "green", [ "v0" ] ],
+    [ "led1:A", "r2:1", "green", [ "v0" ] ],
+    [ "led2:A", "r3:1", "green", [ "v0" ] ],
+    [ "led3:C", "uno:GND.1", "green", [ "v105.6", "h48.4" ] ],
+    [ "led1:C", "uno:GND.1", "green", [ "v0" ] ],
+    [ "led2:C", "uno:GND.1", "green", [ "v105.6", "h0.4" ] ],
+    [ "r3:2", "uno:10", "blue", [ "h0", "v27.6", "h-28.8" ] ],
+    [ "r2:2", "uno:9", "orange", [ "h0" ] ],
+    [ "r1:2", "uno:11", "red", [ "h0" ] ],
+    [ "bz1:2", "uno:7", "red", [ "v0" ] ],
+    [ "bz1:1", "uno:GND.1", "black", [ "v67.2", "h-38.4" ] ],
+    [ "pot1:SIG", "uno:A0", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
